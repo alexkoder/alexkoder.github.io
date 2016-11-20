@@ -1,0 +1,272 @@
+@import 'bourbon'
+
+*, *::before, *::after
+  box-sizing: border-box
+
+body
+	position: relative
+	min-width: 320px
+	font-family: 'Roboto', $helvetica
+	font-size: 16px
+	line-height: 1.4
+
+html, 
+body
+	height: 100%
+
+.global-wrapper
+	position: relative
+	min-height: 100%
+	padding-bottom: 100px
+
+.footer
+	position: absolute
+	bottom: 0
+	left: 0
+	height: 100px
+	width: 100%
+
+// .global-wrapper
+	// min-height: auto;
+	// min-height: calc(100vh - 100px);
+
+.container
+	width: 1170px
+	padding: 0 30px
+	margin: 0 auto
+
+.header,
+.footer
+	min-height: 100px
+	background: #333 url('../img/bg-header.jpg')
+
+.mail-link
+	display: block
+	float: right
+	margin-top: 40px
+	font-size: 20px
+	line-height: 20px
+	color: #777
+	&:hover
+		text-decoration: none
+
+.main
+	padding-top: 80px
+	padding-bottom: 90px
+	background: #fff url('../img/bg-main.gif')
+
+.main-title
+	position: relative
+	margin: 0
+	margin-bottom: 90px 
+	padding-bottom: 20px
+	font-size: 55px
+	font-weight: normal
+	color: #383838
+	text-align: center
+	&::after
+		content: ''
+		position: absolute
+		width: 300px
+		height: 3px
+		bottom: 0
+		left: 0
+		right: 0
+		margin: 0 auto
+		background-color: #66bb66
+
+.items-container
+	font-size: 0
+	margin: 0 -15px
+
+.item
+	font-size: 16px
+	display: inline-block
+	vertical-align: top
+	width: 33.333%
+	padding: 0 15px
+	margin-bottom: 30px	
+
+.item-link
+	position: relative
+	display: block
+	margin: 0
+	padding: 5px
+	color: #333
+	background-color: #f5f5f5
+	box-shadow: 0 0 10px 5px rgba(0,0,0,0.3)	
+	cursor: pointer
+	&:hover
+		.overlay
+			opacity: 1
+	img
+		display: block
+		width: 100%
+		height: auto
+	.overlay
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%	
+		text-align: center
+		background-color: rgba(210,255,210,0.8)
+		opacity: 0		
+		transition: opacity 0.3s
+		&:after
+			content: ''
+			display: inline-block
+			vertical-align: middle
+			height: 100%			
+	.descr-wrap
+		display: inline-block
+		vertical-align: middle
+		width: 85%
+		font-size: 24px		
+		text-shadow: 1px 1px 2px #fff
+	.descr
+		padding-bottom: 1em
+	.page-count
+		padding-bottom: 1em
+
+.screen-overlay
+	display: none
+	position: fixed
+	z-index: 0
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: rgba(0,0,0,0.8)
+
+.popup-close-btn
+	display: none
+	position: fixed
+	z-index: 2
+	left: 94%
+	top: 5%
+	width: 30px
+	height: 30px
+	cursor: pointer
+	&::before,
+	&::after
+		content: ''
+		position: absolute
+		left: 2px
+		top: 13px
+		width: 26px
+		height: 5px
+		background-color: #d1d1d1
+		transition: all 0.3s
+	&::before
+		transform: rotate(45deg)
+	&::after
+		transform: rotate(-45deg)
+	&:hover::before
+		transform: rotate(135deg)
+		background-color: #d18181
+	&:hover::after
+		transform: rotate(45deg)
+		background-color: #d18181
+
+.popup
+	display: none
+	position: fixed
+	z-index: 1
+	left: 7%
+	right: 7%
+	top: 5%
+	max-height: 90%
+	height: 90%
+	padding: 15px
+	background-color: #cdc
+	box-shadow: 0 15px 40px 0 rgba(0,0,0,0.5)
+
+.popup-gallery
+	float: right
+	width: 70%
+	height: 100%
+	margin: 0
+	padding: 0
+	overflow-y: auto;
+	.gallery-img
+		display: block
+		width: 100%	
+
+.popup-descr-block
+	float: left
+	width: 28%
+	height: 100%
+	padding: 15px
+	color: #333
+	background-color: #fff
+	.title
+		margin-top: 10px
+		margin-bottom: 25px
+		font-size: 20px
+		text-transform: uppercase
+		font-weight: normal
+	.pages-title
+		text-transform: uppercase
+		margin-bottom: 8px
+		span
+			text-transform: none
+			color: #888
+	ul
+		margin: 0
+		padding: 0
+		list-style-type: none
+	.pages-list
+		margin-bottom: 25px
+		li
+			position: relative
+			padding-left: 25px
+			line-height: 26px
+		li::before
+			content: ''
+			position: absolute
+			left: 0
+			top: 9px
+			width: 7px
+			height: 7px
+			background-color: #333
+			transform: rotate(45deg)
+		a:hover
+			text-decoration: none
+	.technologies-list
+		span
+			display: inline-block
+			padding: 3px 5px
+			color: #000
+			background-color: #cec
+			border-radius: 5px
+		li
+			margin-bottom: 5px
+	.github-link
+		display: block
+		margin-top: 30px
+		margin-bottom: 30px
+		&:hover
+			text-decoration: none
+	.landing-link
+		display: block
+		margin-bottom: 25px
+		&:hover
+			text-decoration: none
+
+	
+
+
+
+.clearfix::after
+	content: ''
+	display: table
+	clear: both
+
+.clearfix::before
+	content: ''
+	display: table
+
+
+
+@import 'media'
